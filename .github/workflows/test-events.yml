@@ -5,7 +5,7 @@ on:
     push:
         branches:
             - master
-    create:
+    create:  # This should cause the action below to execute whenever a tag is added on master.
         branches:
             - master
 
