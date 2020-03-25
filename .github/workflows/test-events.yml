@@ -1,0 +1,16 @@
+name: Try out event triggers
+on:
+    schedule:
+        - cron: "0 0 * * *"
+    push:
+        branches:
+            - master
+    create
+
+jobs:
+    hello-world:
+        name: "Hello World!"
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: echo "Hello, world!"
