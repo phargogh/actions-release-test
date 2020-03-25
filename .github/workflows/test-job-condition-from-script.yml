@@ -1,0 +1,13 @@
+name: Experiment with using a script as a job condition
+on:
+    push:
+        branches:
+            - master
+jobs:
+    hello-world:
+        name: "Hello world should not run on script output"
+        runs-on: ubuntu-latest
+        if: python -c "raise Exception('nope!')"
+        steps:
+            - uses: actions/checkout@v2
+            - run: echo "Hello, world!  This should not be displayed!"
